@@ -11,8 +11,10 @@ export default class index extends Component {
   render() {
     return (
       <div class="body">
+         {/*Part Header */}
+         <Header></Header>
         <div class="container">
-          <Header></Header>
+             {/*Part Content */}
           <div class="row mt-5">
             <div class="col-4">
               <Filter></Filter>
@@ -21,7 +23,7 @@ export default class index extends Component {
              <Content></Content>
             </div>
           </div>
-          
+           {/*Part Footer */}
             <footer><Footer></Footer></footer>
         
         </div>

@@ -1,0 +1,17 @@
+.social {
+   margin-left: 10rem;
+}
+
+.social a{
+    font-size:2.5rem;
+    color: white;
+    & .i{
+        
+        padding: 10px;
+        border-radius: 50%;
+       
+    }
+    & .i:hover{
+        background-color: gray;
+    }
+}
