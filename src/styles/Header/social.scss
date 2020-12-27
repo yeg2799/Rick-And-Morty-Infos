@@ -1,7 +1,10 @@
 .social {
-   margin-left: 10rem;
+   margin-left: 5rem;
+  
 }
-
+.social-m{
+    padding-right:2rem;
+}
 .social a{
     font-size:2.5rem;
     color: white;
@@ -13,5 +16,6 @@
     }
     & .i:hover{
         background-color: gray;
+        color: white;
     }
 }
