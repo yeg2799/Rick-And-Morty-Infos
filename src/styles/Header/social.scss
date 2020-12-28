@@ -1,12 +1,10 @@
-.social {
-   margin-left: 5rem;
-  
-}
 .social-m{
-    padding-right:2rem;
+    display: flex;
+    flex-direction: row;
+
 }
 .social a{
-    font-size:2.5rem;
+    font-size:3rem;
     color: white;
     & .i{
         

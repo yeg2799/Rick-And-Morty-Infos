@@ -1,6 +1,11 @@
 .card{
-    width: 100%;
-   
+    width: 80%;
+    margin: 0 auto;
     color: black;
-   
+}
+.card img{
+    transition: 2s;
+}
+.card img:hover{
+    opacity: 0.7;
 }

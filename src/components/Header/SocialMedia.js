@@ -11,10 +11,10 @@ export default class SocialMedia extends Component {
     return (
       <div class="social">
         <div class="row">
-          <col class="col-2">
-
-          </col>
-          <div class="col-1 social-m">
+          <div class="col-4">
+          </div>
+          <div class="col-8 social-m">
+          <div class="col-2">
             <a
               href="https://www.facebook.com/emre.guzel.3386/"
               target="_blank"
@@ -24,7 +24,7 @@ export default class SocialMedia extends Component {
               <FaFacebook class="i"></FaFacebook>
             </a>
           </div>
-          <div class="col-1 social-m">
+          <div class="col-2">
             <a
               href="https://www.instagram.com/emregzl27/"
               target="_blank"
@@ -34,7 +34,7 @@ export default class SocialMedia extends Component {
               <FaInstagram class="i"></FaInstagram>
             </a>
           </div>
-          <div class="col-1 social-m">
+          <div class="col-2">
             <a
               href="https://www.linkedin.com/in/emre-g%C3%BCzel-6bb4101a2/"
               target="_blank"
@@ -44,7 +44,7 @@ export default class SocialMedia extends Component {
               <FaLinkedinIn class="i"></FaLinkedinIn>
             </a>
           </div>
-          <div class="col-1 social-m">
+          <div class="col-2">
             <a
               href="https://github.com/yeg2799"
               target="_blank"
@@ -55,7 +55,7 @@ export default class SocialMedia extends Component {
             </a>
           </div>
           
-          <div class="col-1 social-m">
+          <div class="col-2">
             <a
               href="https://twitter.com/emrex99"
               target="_blank"
@@ -65,6 +65,8 @@ export default class SocialMedia extends Component {
               <FaTwitter class="i"></FaTwitter>
             </a>
           </div>
+          </div>
+         
         </div>
       </div>
     );
