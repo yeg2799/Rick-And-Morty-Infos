@@ -6,19 +6,17 @@ import "../../styles/Header/header.scss";
 export default class Header extends Component {
   render() {
     return (
-     
-        <div class="row header">
-          <div class="col-4">
-            <Logo></Logo>
-          </div>
-          <div class="col-4">
-            <HeaderCenter></HeaderCenter>
-          </div>
-          <div class="col-4">
-            <SocialMedia></SocialMedia>
-          </div>
+        <div class="row">
+        <div class="col-4">
+          <Logo></Logo>
         </div>
-     
+        <div class="col-4">
+          <HeaderCenter></HeaderCenter>
+        </div>
+        <div class="col-4">
+          <SocialMedia></SocialMedia>
+        </div>
+        </div>
     );
   }
 }

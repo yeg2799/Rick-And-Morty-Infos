@@ -9,7 +9,7 @@ import {
 export default class SocialMedia extends Component {
   render() {
     return (
-      <div class="social">
+      <div class="social mt-5">
         <div class="row">
           <div class="col-4">
           </div>

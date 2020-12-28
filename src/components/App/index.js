@@ -25,13 +25,12 @@ export default class index extends Component {
       <div class="body">
          {/*Part Header */}
          <div class="part-header">
-         <Header></Header>
+           <Header></Header>
          </div>
         <div class="container">
-           
              {/*Part Content */}
-          <div class="row mt-5">
-            <div class="col-4 mt-5">
+          <div class="row">
+            <div class="col-4 filter mt-5">
               <Filter></Filter>
             </div>
             <div class="col-8 mt-5">
@@ -39,7 +38,10 @@ export default class index extends Component {
             </div>
           </div>
            {/*Part Footer */}
-            <footer><Footer></Footer></footer>
+           <div class="footer">
+           <footer><Footer></Footer></footer>
+           </div>
+            
         
         </div>
       </div>

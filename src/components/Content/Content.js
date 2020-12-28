@@ -3,7 +3,9 @@ import "../../styles/content.scss";
 export default class Content extends Component {
   render() {
     return (
-      <div class="content">
+      <div class="part-content">
+        <h1>Characters</h1>
+<div class="content mt-5">
         {this.props.getCharacters.map((character) => (
           <div class="card mb-5" key={character.id}>
             <img src={character.image} class="card-img-top" alt="..." />
@@ -15,6 +17,8 @@ export default class Content extends Component {
           </div>
         ))}
       </div>
+      </div>
+      
     );
   }
 }
