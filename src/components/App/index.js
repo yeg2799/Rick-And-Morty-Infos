@@ -7,7 +7,17 @@ import Footer from '../Footer/index'
 export default class index extends Component {
   state = {
     characterUrl: "https://rickandmortyapi.com/api/character",
+    characters:[]
   };
+  componentDidMount(){
+    this.getCharacters();
+  }
+  getCharacters=()=>{
+    fetch("https://rickandmortyapi.com/api/character")
+    .then(response=>response.json())
+    .then(data=>this.setState({characters:data.results}))
+    .catch(err=>console.log(err));
+  }
   render() {
     return (
       <div class="body">
@@ -21,7 +31,7 @@ export default class index extends Component {
               <Filter></Filter>
             </div>
             <div class="col-8">
-             <Content></Content>
+             <Content getCharacters={this.state.characters}></Content>
             </div>
           </div>
            {/*Part Footer */}
