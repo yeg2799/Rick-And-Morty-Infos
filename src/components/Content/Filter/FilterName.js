@@ -12,8 +12,10 @@ export default class FilterName extends Component {
             <input
               type="text"
               class="form-control"
+              name="currentName"
               id="name"
               placeholder="Enter Name"
+              onChange={this.props.onHandleChange}
             />
           </div>
             </div>

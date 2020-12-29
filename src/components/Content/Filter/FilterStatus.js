@@ -5,11 +5,11 @@ export default class FilterStatus extends Component {
     return (
       <div class="select-status mt-5">
         <label>Status</label>
-        <select class="form-select" >
+        <select class="form-select" name="currentStatus" onChange={this.props.onHandleChange}>
           <option selected>Select Status</option>
-          <option value="1">alive</option>
-          <option value="2">dead</option>
-          <option value="3">unknown</option>
+          <option value="alive">alive</option>
+          <option value="dead">dead</option>
+          <option value="unknown">unknown</option>
         </select>
       </div>
     );

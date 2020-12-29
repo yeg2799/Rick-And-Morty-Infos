@@ -10,9 +10,11 @@ export default class FilterGender extends Component {
             <div class="form-check">
               <input
                 class="form-check-input"
-                type="checkbox"
-                value=""
+                type="radio"
+                value="female"
+                name="currentGender"
                 id="female-check"
+                onChange={this.props.onHandleChange}
               />
               <label class="form-check-label" for="female-check">
                 female
@@ -21,9 +23,11 @@ export default class FilterGender extends Component {
             <div class="form-check">
               <input
                 class="form-check-input"
-                type="checkbox"
-                value=""
+                type="radio"
+                value="male"
+                name="currentGender"
                 id="male-check"
+                onChange={this.props.onHandleChange}
               />
               <label class="form-check-label" for="male-check">
                 male
@@ -32,9 +36,11 @@ export default class FilterGender extends Component {
             <div class="form-check">
               <input
                 class="form-check-input"
-                type="checkbox"
-                value=""
+                type="radio"
+                value="genderless"
+                name="currentGender"
                 id="genderless-check"
+                onChange={this.props.onHandleChange}
               />
               <label class="form-check-label" for="genderless-check">
                 genderless
@@ -43,11 +49,13 @@ export default class FilterGender extends Component {
             <div class="form-check">
               <input
                 class="form-check-input"
-                type="checkbox"
-                value=""
+                type="radio"
+                value="unknown"
+                name="currentGender"
                 id="unknown-check"
+                onChange={this.props.onHandleChange}
               />
-              <label class="form-check-label" for="unknown-check" >
+              <label class="form-check-label" for="unknown-check">
                 unknown
               </label>
             </div>

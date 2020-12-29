@@ -9,16 +9,24 @@ export default class index extends Component {
     characterUrl: "https://rickandmortyapi.com/api/character",
     charactersResults:[],
     characterInfo:[],
+    filterCharacters:[]
   };
   componentDidMount(){
     this.getCharacters();
+    this.getFilterCharacters();
   }
-  getCharacters=()=>{
-    fetch("https://rickandmortyapi.com/api/character")
+  getCharacters=(id)=>{
+    fetch("https://rickandmortyapi.com/api/character?page="+id)
     .then(response=>response.json())
     .then(data=>this.setState({charactersResults:data.results}))
-    .then(data=>this.setState({characterInfo:data.info}))
     .catch(err=>console.log(err));
+  }
+  getFilterCharacters=(name,gender,status)=>{
+    let url="https://rickandmortyapi.com/api/character/?name="+name+"&gender="+gender+"&status="+status;
+    fetch(url)
+    .then(response=>response.json())
+    .then(data=>this.setState({filterCharacters:data.results}))
+    .catch(err=>console.error(err));
   }
   render() {
     return (
@@ -31,10 +39,10 @@ export default class index extends Component {
              {/*Part Content */}
           <div class="row">
             <div class="col-4 filter mt-5">
-              <Filter></Filter>
+              <Filter filter={this.getFilterCharacters}></Filter>
             </div>
             <div class="col-8 mt-5">
-             <Content getCharacters={this.state.charactersResults}></Content>
+             <Content getCharacters={this.state.charactersResults} filterCharacters={this.state.filterCharacters}></Content>
             </div>
           </div>
            {/*Part Footer */}
