@@ -9,16 +9,24 @@ export default class index extends Component {
     characterUrl: "https://rickandmortyapi.com/api/character",
     charactersResults:[],
     characterInfo:[],
-    filterCharacters:[]
+    filterCharacters:[],
+    url:"https://rickandmortyapi.com/api/character?page="
   };
   componentDidMount(){
-    this.getCharacters();
-    this.getFilterCharacters();
+    this.getCharacters(this.state.url);
+    this.getCharacterInfo(this.state.url);
   }
-  getCharacters=(id)=>{
-    fetch("https://rickandmortyapi.com/api/character?page="+id)
+  getCharacters=(url)=>{
+    fetch(url)
     .then(response=>response.json())
     .then(data=>this.setState({charactersResults:data.results}))
+    .catch(err=>console.log(err));
+  }
+  getCharacterInfo=(url)=>{
+    fetch(url)
+    .then(response=>response.json())
+    .then(data=>this.setState({characterInfo:data.info}))
+    // .then(data=>console.log(data.info.next))
     .catch(err=>console.log(err));
   }
   getFilterCharacters=(name,gender,status)=>{
@@ -39,10 +47,11 @@ export default class index extends Component {
              {/*Part Content */}
           <div class="row">
             <div class="col-4 filter mt-5">
-              <Filter filter={this.getFilterCharacters}></Filter>
+              <Filter></Filter>
             </div>
-            <div class="col-8 mt-5">
-             <Content getCharacters={this.state.charactersResults} filterCharacters={this.state.filterCharacters}></Content>
+            <div class="col-8 mt-5">  
+             <Content getCharacters={this.state.charactersResults} filterCharacters={this.state.filterCharacters} info={this.state.characterInfo} characters={this.getCharacters} url={this.state.url} infos={this.getCharacterInfo}></Content>
+            
             </div>
           </div>
            {/*Part Footer */}
