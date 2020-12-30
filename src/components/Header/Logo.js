@@ -4,7 +4,7 @@ export default class Logo extends Component {
     render() {
         return (
             <div class="logo">
-                <img src="https://images.laptopsticker.org/l-m/rick-morty-cartoon-silhouette-logo.jpg" alt=""></img>
+                <a href="/"><img src="https://images.laptopsticker.org/l-m/rick-morty-cartoon-silhouette-logo.jpg" alt=""></img></a>
             </div>
         )
     }
