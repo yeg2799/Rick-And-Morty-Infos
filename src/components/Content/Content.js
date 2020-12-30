@@ -37,7 +37,7 @@ export default class Content extends Component {
           ))}
         </div>
 
-        <div class="navigation">
+        {/* <div class="navigation">
           <nav aria-label="Page navigation example">
             <ul class="pagination">
               <li class="page-item">
@@ -48,7 +48,7 @@ export default class Content extends Component {
               </li>
             </ul>
           </nav>
-        </div>
+        </div> */}
       </div>
     );
   }
