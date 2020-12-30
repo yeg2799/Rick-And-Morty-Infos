@@ -15,6 +15,7 @@ export default class index extends Component {
   componentDidMount(){
     this.getCharacters(this.state.url);
     this.getCharacterInfo(this.state.url);
+    this.getFilterCharacters();
   }
   getCharacters=(url)=>{
     fetch(url)
@@ -47,7 +48,7 @@ export default class index extends Component {
              {/*Part Content */}
           <div class="row">
             <div class="col-4 filter mt-5">
-              <Filter></Filter>
+              <Filter filter={this.getFilterCharacter}></Filter>
             </div>
             <div class="col-8 mt-5">  
              <Content getCharacters={this.state.charactersResults} filterCharacters={this.state.filterCharacters} info={this.state.characterInfo} characters={this.getCharacters} url={this.state.url} infos={this.getCharacterInfo}></Content>

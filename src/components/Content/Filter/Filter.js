@@ -10,16 +10,8 @@ export default class Filter extends Component {
     currentGender:"",
     currentStatus:"",
     }
-   
-  handleSubmit=(e)=>{
-    let name=this.state.currentName;
-    let gender=this.state.currentGender;
-    let status=this.state.currentStatus
-    
-    
-      this.props.filter(name,gender,status);
-    
-  }
+  
+
   onChangeHandle=(e)=>{
     this.setState({[e.target.name]:e.target.value})
   }
@@ -32,7 +24,8 @@ export default class Filter extends Component {
           <FilterName onHandleChange={this.onChangeHandle}></FilterName>
           <FilterGender onHandleChange={this.onChangeHandle}></FilterGender>
           <FilterStatus  onHandleChange={this.onChangeHandle}></FilterStatus>
-          <FilterButton  handle={this.handleSubmit}></FilterButton>
+          <FilterButton currentName={this.state.currentName} currentGender={this.state.currentGender} currentStatus={this.state.currentStatus} filter={this.props.filter}></FilterButton>
+          
         </form>
       </div>
       </div>
