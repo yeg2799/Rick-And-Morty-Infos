@@ -24,12 +24,14 @@ export default class index extends Component {
     this.getCharacterInfo(this.state.url);
     this.getFilterCharacters();
   }
+  //Get Character
   getCharacters=(url)=>{
     fetch(url)
     .then(response=>response.json())
     .then(data=>this.setState({charactersResults:data.results}))
     .catch(err=>console.log(err));
   }
+  //Character info (page vs)
   getCharacterInfo=(url)=>{
     fetch(url)
     .then(response=>response.json())
@@ -37,6 +39,7 @@ export default class index extends Component {
     // .then(data=>console.log(data.info.next))
     .catch(err=>console.log(err));
   }
+  //Filter Characters
   getFilterCharacters=(name,gender,status)=>{
     let url="https://rickandmortyapi.com/api/character/";
     if(name || gender || status){
@@ -58,7 +61,7 @@ export default class index extends Component {
          </div>
         <div class="container">
              {/*Part Content */}
-          <div class="row">
+          <div class="row mt-5">
             <div class="col-4 filter mt-5">
               <Filter filter={this.getFilterCharacters} currentName={this.state.currentName} currentGender={this.state.currentGender} currentStatus={this.state.currentStatus} onChangeHandle={this.onChangeHandle}></Filter>
             </div>
