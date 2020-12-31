@@ -10,8 +10,15 @@ export default class index extends Component {
     charactersResults:[],
     characterInfo:[],
     filterCharacters:[],
-    url:"https://rickandmortyapi.com/api/character?page="
+    url:"https://rickandmortyapi.com/api/character?page=",
+    currentName:"",
+    currentGender:"",
+    currentStatus:"",
+    boolFilter:false
   };
+  onChangeHandle=(e)=>{
+    this.setState({[e.target.name]:e.target.value})
+  }
   componentDidMount(){
     this.getCharacters(this.state.url);
     this.getCharacterInfo(this.state.url);
@@ -31,10 +38,15 @@ export default class index extends Component {
     .catch(err=>console.log(err));
   }
   getFilterCharacters=(name,gender,status)=>{
-    let url="https://rickandmortyapi.com/api/character/?name="+name+"&gender="+gender+"&status="+status;
+    let url="https://rickandmortyapi.com/api/character/";
+    if(name || gender || status){
+      this.setState({boolFilter:true});
+     url+= `?name=${name}&gender=${gender}&status=${status}`;
+    }
     fetch(url)
     .then(response=>response.json())
     .then(data=>this.setState({filterCharacters:data.results}))
+    // .then(data=>console.log(data.results))
     .catch(err=>console.error(err));
   }
   render() {
@@ -48,10 +60,10 @@ export default class index extends Component {
              {/*Part Content */}
           <div class="row">
             <div class="col-4 filter mt-5">
-              <Filter filter={this.getFilterCharacter}></Filter>
+              <Filter filter={this.getFilterCharacters} currentName={this.state.currentName} currentGender={this.state.currentGender} currentStatus={this.state.currentStatus} onChangeHandle={this.onChangeHandle}></Filter>
             </div>
             <div class="col-8 mt-5">  
-             <Content getCharacters={this.state.charactersResults} filterCharacters={this.state.filterCharacters} info={this.state.characterInfo} characters={this.getCharacters} url={this.state.url} infos={this.getCharacterInfo}></Content>
+             <Content boolFilter={this.state.boolFilter} getCharacters={this.state.charactersResults} filterCharacters={this.state.filterCharacters} info={this.state.characterInfo} characters={this.getCharacters} url={this.state.url} infos={this.getCharacterInfo}></Content>
             
             </div>
           </div>

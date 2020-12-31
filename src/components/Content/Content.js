@@ -21,22 +21,40 @@ export default class Content extends Component {
   render() {
     return (
       <div class="part-content">
+        
         <h1>Characters</h1>
         <div class="content mt-5">
-          {this.props.getCharacters.map((character) => (
-            <div class="card mb-5" key={character.id}>
-              <img src={character.image} class="card-img-top" alt="..." />
-              <div class="card-body">
-                <h5 class="card-title">{character.name}</h5>
-                <p class="card-text">{character.gender}</p>
-                <p class="card-text">{character.status}</p>
-                <p class="card-text">{character.species}</p>
-                <p class="card-text">{character.type}</p>
-              </div>{" "}
-            </div>
-          ))}
+          {this.props.boolFilter? 
+         this.props.filterCharacters.map((filter) => (
+          <div class="card mb-5" key={filter.id}>
+            <img src={filter.image} class="card-img-top" alt="..." />
+            <div class="card-body">
+              <h5 class="card-title">{filter.name}</h5>
+              <p class="card-text">{filter.gender}</p>
+              <p class="card-text">{filter.status}</p>
+              <p class="card-text">{filter.species}</p>
+              <p class="card-text">{filter.type}</p>
+            </div>{" "}
+          </div>
+        ))
+        :
+        this.props.getCharacters.map((character) => (
+          <div class="card mb-5" key={character.id}>
+            <img src={character.image} class="card-img-top" alt="..." />
+            <div class="card-body">
+              <h5 class="card-title">{character.name}</h5>
+              <p class="card-text">{character.gender}</p>
+              <p class="card-text">{character.status}</p>
+              <p class="card-text">{character.species}</p>
+              <p class="card-text">{character.type}</p>
+            </div>{" "}
+          </div>
+        ))
+        
+        
+        }
         </div>
-
+              {/*Navigation*/}
         <div class="navigation">
           <nav aria-label="Page navigation example">
             <ul class="pagination">

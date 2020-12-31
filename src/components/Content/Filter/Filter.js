@@ -5,15 +5,13 @@ import FilterGender from './FilterGender';
 import FilterButton from './FilterButton'
 import '../../../styles/Filter/filter.scss'
 export default class Filter extends Component {
-  state={
-    currentName:"",
-    currentGender:"",
-    currentStatus:"",
-    }
-  
+  handleSubmit=(e)=>{
+    let name=this.props.currentName;
+    let gender=this.props.currentGender;
+    let status=this.props.currentStatus;
 
-  onChangeHandle=(e)=>{
-    this.setState({[e.target.name]:e.target.value})
+    this.props.filter(name,gender,status);
+    console.log(name+" "+gender+" "+status)
   }
   render() {
     return (
@@ -21,10 +19,10 @@ export default class Filter extends Component {
         <h1>Filter</h1>
          <div class="mt-5">
         <form>
-          <FilterName onHandleChange={this.onChangeHandle}></FilterName>
-          <FilterGender onHandleChange={this.onChangeHandle}></FilterGender>
-          <FilterStatus  onHandleChange={this.onChangeHandle}></FilterStatus>
-          <FilterButton currentName={this.state.currentName} currentGender={this.state.currentGender} currentStatus={this.state.currentStatus} filter={this.props.filter}></FilterButton>
+          <FilterName onHandleChange={this.props.onChangeHandle}></FilterName>
+          <FilterGender onHandleChange={this.props.onChangeHandle}></FilterGender>
+          <FilterStatus  onHandleChange={this.props.onChangeHandle}></FilterStatus>
+          <FilterButton handleSubmit={this.handleSubmit}></FilterButton>
           
         </form>
       </div>
