@@ -1,6 +1,7 @@
 import React, { Component } from 'react'
 import { Link } from 'react-router-dom'
 import '../../styles/Header/header-menu.scss'
+
 export default class HeaderMenu extends Component {
     render() {
         return (
@@ -9,10 +10,10 @@ export default class HeaderMenu extends Component {
                 <Link to="/" className="link">Home</Link>
                 </div>
                 <div class="links">
-                <Link to="/" className="link">Episodes</Link>
+                <Link to="/episodes" className="link">Episodes</Link>
                 </div>
                 <div class="links">
-                <Link to="/" className="link">About Me</Link>
+                <Link to="/about" className="link">About Me</Link>
                 </div>
             </div>
         )
