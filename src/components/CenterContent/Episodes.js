@@ -23,11 +23,11 @@ export default class Episodes extends Component {
         <div className="episodes">
           <h1>Episodes</h1>
           {this.props.episodes.map((episode) => (
-            <div class="card mt-5">
+            <div class="card mt-5 cardEpisode">
               <p>{episode.id}</p>
               <p>{episode.name}</p>
               <p>{episode.air_date}</p>
-             <button class="btn btn-success button" onClick={this.getEpisodeCharacters}>Episode Characters</button>
+             <a href="https://www.netflix.com/title/80014749" class="watch btn btn-success" target="_blank" rel="noreferrer">Watch Rick And Morty</a>
             </div>
           ))}
           <div class="navigation mt-5">
