@@ -25,6 +25,7 @@ export default class Episodes extends Component {
           {this.props.episodes.map((episode) => (
             <div class="card mt-5 cardEpisode">
               <p>{episode.id}</p>
+              <p>{episode.episode}</p>
               <p>{episode.name}</p>
               <p>{episode.air_date}</p>
              <a href="https://www.netflix.com/title/80014749" class="watch btn btn-success" target="_blank" rel="noreferrer">Watch Rick And Morty</a>

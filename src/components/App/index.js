@@ -3,7 +3,6 @@ import "../../styles/index.scss";
 import Header from "../Header/Header";
 import Content from '../CenterContent/Content';
 import Filter from '../CenterContent/Filter/Filter';
-import Footer from '../Footer/index'
 import { Switch,Route } from "react-router-dom";
 import Aboutme from "../CenterContent/Aboutme";
 import Episodes from "../CenterContent/Episodes";
@@ -104,27 +103,15 @@ export default class index extends Component {
             </div>
               </Route>
               <Route exact path="/episodes">
-                
                <Episodes getEpisodesInfo={this.getEpisodesInfo} getAllEpisodes={this.getAllEpisodes} episodes={this.state.episodes} episodeInfo={this.state.episodeInfo} > </Episodes>
-              
-                
               </Route>
               <Route exact path="/about">
-                
                 <Aboutme></Aboutme>
-              
-                
               </Route>
             </Switch>
-          
           </div>
-           {/*Part Footer */}
-           <div class="footer">
-           <footer><Footer></Footer></footer>
-           </div>
-            
-        
         </div>
+        
       </div>
     );
   }
