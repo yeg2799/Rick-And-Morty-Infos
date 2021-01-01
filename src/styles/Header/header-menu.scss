@@ -1,16 +1,19 @@
 .menu{
     display: flex;
-    width: 50%;
+    width: 60%;
     margin: 0 auto;
-    justify-content: space-between;
-    height: 60px;
+    justify-content: space-around;
+    height: 100px;
 }
 .link{
 color: #1da1f2;
 font-size: 1.5rem;
+padding: 10px;
+border-radius: 10px;
 
 }
 .link:hover{
     color: white; 
+    background-color: #1da1f2;
     text-decoration: none;
 }

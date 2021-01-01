@@ -1,5 +1,43 @@
-.about{
-width: 100%;
-background-color: black;
-color: white;
+.about-me{
+    width: 70%;
+    margin: 8% auto;
+   
+    & .img{
+       width: 80%;
+        margin-left: 2rem;
+       
+        & img{
+            width: 100%;
+            border-radius: 50%;
+        }
+    }
+    & .about{
+        width: 100%;
+        margin: 10% auto;
+        text-align: center;
+    }
+    & .social-media{
+        width: 100%;
+        font-size: 3rem;
+        text-align: center;
+        display: flex;
+        justify-content: space-evenly;
+        margin-top: 40px;
+        & span a{
+            color: black;
+            & .i{
+                color: #fff;
+                padding: 10px;
+                border-radius: 50px;
+                &:hover{
+                    background-color: #1da1f2;
+                }
+            }
+            
+        }
+
+    }  
+}
+.about-head{
+    display: flex;
 }
