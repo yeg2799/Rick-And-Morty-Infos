@@ -13,7 +13,11 @@ export default class index extends Component {
     charactersResults:[],
     characterInfo:[],
     filterCharacters:[],
+    episodes:[],
+    episodeInfo:[],
+    episodeCharacters:[],
     url:"https://rickandmortyapi.com/api/character?page=",
+    urlEpisode:"https://rickandmortyapi.com/api/episode",
     currentName:"",
     currentGender:"",
     currentStatus:"",
@@ -25,6 +29,9 @@ export default class index extends Component {
   componentDidMount(){
     this.getCharacters(this.state.url);
     this.getCharacterInfo(this.state.url);
+    this.getAllEpisodes(this.state.urlEpisode);
+    this.getEpisodesInfo(this.state.urlEpisode);
+    this.getEpisodesCharacters(this.state.urlEpisode);
     this.getFilterCharacters();
   }
   //Get Character
@@ -55,6 +62,28 @@ export default class index extends Component {
     // .then(data=>console.log(data.results))
     .catch(err=>console.error(err));
   }
+  //getAllEpisodes
+  getAllEpisodes=(urlEpisode)=>{
+    fetch(urlEpisode)
+    .then(response=>response.json())
+    .then(data=>this.setState({episodes:data.results}))
+    // .then(data=>console.log(data))
+    .catch(err=>console.error(err));
+  }
+  //Epispode Info
+  getEpisodesInfo=(urlEpisode)=>{
+    fetch(urlEpisode)
+    .then(response=>response.json())
+    .then(data=>this.setState({episodeInfo:data.info}))
+    .catch(err=>console.log(err));
+  }
+  getEpisodesCharacters=(urlEpisode)=>{
+    fetch(urlEpisode)
+    .then(response=>response.json())
+    // .then(data=>this.setState({episodeInfo:data.result.characters}))
+    .then(data=>console.log(data.results))
+    .catch(err=>console.log(err));
+  }
   render() {
     return (
       <div class="body">
@@ -76,7 +105,7 @@ export default class index extends Component {
               </Route>
               <Route exact path="/episodes">
                 
-               <Episodes></Episodes>
+               <Episodes getEpisodesInfo={this.getEpisodesInfo} getAllEpisodes={this.getAllEpisodes} episodes={this.state.episodes} episodeInfo={this.state.episodeInfo} > </Episodes>
               
                 
               </Route>
