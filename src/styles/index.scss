@@ -21,3 +21,8 @@
 .partCenter{
     margin-top: 7rem;
 }
+@media screen and (max-width: 1024px) {
+    .partCenter{
+        margin-top: 1rem;
+    }
+  }

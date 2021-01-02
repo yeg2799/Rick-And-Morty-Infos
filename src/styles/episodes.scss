@@ -10,3 +10,9 @@
     width: 80%;
     margin: 0 auto;
 }
+@media screen and (max-width: 425px) {
+    .episodes{
+        width: 80%;
+        margin: 5rem auto;
+    }
+  }
