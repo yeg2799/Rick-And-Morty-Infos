@@ -2,15 +2,15 @@
     width: 80%;
     margin: 0 auto;
     color: black;
+    & img{
+        transition: 2s;
+        &:hover{
+            opacity: 0.7;
+        }
+    }
 }
-.card img{
-    transition: 2s;
-}
-.card img:hover{
-    opacity: 0.7;
-}
-
 .navigation{
 width: 20%;
 margin: 0 auto;
+    
 }

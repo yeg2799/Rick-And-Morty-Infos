@@ -1,19 +1,18 @@
 .social-m{
     display: flex;
     flex-direction: row;
-
-}
-.social a{
-    font-size:3rem;
-    color: white;
-    & .i{
-        
-        padding: 10px;
-        border-radius: 50%;
-       
-    }
-    & .i:hover{
-        background-color: gray;
+   & a{
+        font-size:3rem;
         color: white;
+        & .i{
+            
+            padding: 10px;
+            border-radius: 50%;
+           
+        }
+        & .i:hover{
+            background-color: gray;
+            color: white;
+        }
     }
 }
