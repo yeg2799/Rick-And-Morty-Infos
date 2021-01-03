@@ -14,9 +14,17 @@ width: 20%;
 margin: 0 auto;
     
 }
-@media screen and (max-width: 960px) {
+@media screen and (max-width: 768px) {
+    .part-content{
+      padding-left: 3rem;
+    }
     .card{
         width: 100%;
-        margin: 0 auto;
     }
+}
+@media screen and (max-width: 690px) {
+   .part-content{
+       width: 70%;
+       margin: 0 auto;
+   }
   }

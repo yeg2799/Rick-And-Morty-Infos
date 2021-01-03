@@ -6,6 +6,7 @@ import Filter from "../CenterContent/Filter/Filter";
 import { Switch, Route } from "react-router-dom";
 import Aboutme from "../CenterContent/Aboutme";
 import Episodes from "../CenterContent/Episodes";
+
 export default class index extends Component {
   state = {
     characterUrl: "https://rickandmortyapi.com/api/character",
@@ -21,6 +22,7 @@ export default class index extends Component {
     currentGender: "",
     currentStatus: "",
     boolFilter: false,
+    matches: window.matchMedia("(min-width: 690px)").matches,
   };
   onChangeHandle = (e) => {
     this.setState({ [e.target.name]: e.target.value });
@@ -83,6 +85,7 @@ export default class index extends Component {
       .then((data) => console.log(data.results))
       .catch((err) => console.log(err));
   };
+
   render() {
     return (
       <div class="body">
@@ -95,26 +98,53 @@ export default class index extends Component {
           <div class="row partCenter">
             <Switch>
               <Route exact path="/">
-                <div class="col-4 filter">
-                  <Filter
-                    filter={this.getFilterCharacters}
-                    currentName={this.state.currentName}
-                    currentGender={this.state.currentGender}
-                    currentStatus={this.state.currentStatus}
-                    onChangeHandle={this.onChangeHandle}
-                  ></Filter>
-                </div>
-                <div class="col-8">
-                  <Content
-                    boolFilter={this.state.boolFilter}
-                    getCharacters={this.state.charactersResults}
-                    filterCharacters={this.state.filterCharacters}
-                    info={this.state.characterInfo}
-                    characters={this.getCharacters}
-                    url={this.state.url}
-                    infos={this.getCharacterInfo}
-                  ></Content>
-                </div>
+                {this.state.matches ? (
+                  <>
+                    <div class="col-4 filter">
+                      <Filter
+                        filter={this.getFilterCharacters}
+                        currentName={this.state.currentName}
+                        currentGender={this.state.currentGender}
+                        currentStatus={this.state.currentStatus}
+                        onChangeHandle={this.onChangeHandle}
+                      ></Filter>
+                    </div>
+                    <div class="col-8">
+                      <Content
+                        boolFilter={this.state.boolFilter}
+                        getCharacters={this.state.charactersResults}
+                        filterCharacters={this.state.filterCharacters}
+                        info={this.state.characterInfo}
+                        characters={this.getCharacters}
+                        url={this.state.url}
+                        infos={this.getCharacterInfo}
+                      ></Content>
+                    </div>
+                  </>
+                ) : (
+                  <>
+                  {/* <div class="filter">
+                    <Filter
+                      filter={this.getFilterCharacters}
+                      currentName={this.state.currentName}
+                      currentGender={this.state.currentGender}
+                      currentStatus={this.state.currentStatus}
+                      onChangeHandle={this.onChangeHandle}
+                    ></Filter>
+                  </div> */}
+                  <div class="content">
+                    <Content
+                      boolFilter={this.state.boolFilter}
+                      getCharacters={this.state.charactersResults}
+                      filterCharacters={this.state.filterCharacters}
+                      info={this.state.characterInfo}
+                      characters={this.getCharacters}
+                      url={this.state.url}
+                      infos={this.getCharacterInfo}
+                    ></Content>
+                  </div>
+                </>
+                )}
               </Route>
               <Route exact path="/episodes">
                 <Episodes

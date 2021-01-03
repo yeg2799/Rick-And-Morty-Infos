@@ -1,6 +1,14 @@
-.logo{
-    width: 40%;
-    & img{
-        width: 80%;
-    }
+.logo {
+  width: 40%;
+  & img {
+    width: 80%;
+  }
+}
+@media screen and (max-width: 425px) {
+  .logo {
+    width: 100%;
+  }
+  & img {
+    width: 100%;
+  }
 }

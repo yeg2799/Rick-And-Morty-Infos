@@ -21,8 +21,16 @@
 .partCenter{
     margin-top: 7rem;
 }
-@media screen and (max-width: 1024px) {
+@media screen and (max-width: 1440px) {
     .partCenter{
-        margin-top: 1rem;
+        margin-top: 2.4rem;
+    }
+  }
+  @media screen and (max-width: 690px) {
+    .filter{
+        display: none;
+    }
+    .content{
+        width: 100%;
     }
   }
